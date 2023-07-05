@@ -1,5 +1,8 @@
 from django.shortcuts import render
 
+from sayt.models import Contact
+
+
 # Create your views here.
 
 def index(requests):
@@ -17,9 +20,20 @@ def about(requests):
 
 
 def contact(requests):
-    ctx = {
+    ctx = {}
+    if requests.POST:
+        name = requests.POST.get('name')
+        message = requests.POST.get('message')
+        phone = requests.POST.get('phone')
+        email = requests.POST.get('email')
+        Contact.objects.create(
+            name=name, message=message, phone=phone, email=email
+        )
 
-    }
+        ctx = {
+            "contact": contact,
+
+        }
     return render(requests, "contact.html", ctx)
 
 

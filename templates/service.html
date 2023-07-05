@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static %}
 <html>
 
 <head>
@@ -23,12 +24,12 @@
   <link href="https://fonts.googleapis.com/css?family=Poppins:400,700|Raleway:400,700&display=swap" rel="stylesheet" />
 
   <!-- bootstrap core css -->
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+  <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}" />
 
   <!-- Custom styles for this template -->
-  <link href="css/style.css" rel="stylesheet" />
+  <link href="{% static 'css/style.css' %}" rel="stylesheet" />
   <!-- responsive style -->
-  <link href="css/responsive.css" rel="stylesheet" />
+  <link href="{% static 'css/responsive.css' %}" rel="stylesheet" />
 </head>
 
 <body class="sub_page">
@@ -47,26 +48,26 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
               <ul class="navbar-nav  ">
-                <li class="nav-item ">
-                  <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                <li class="nav-item active">
+                  <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="about.html">
+                  <a class="nav-link" href="{% url 'about' %}">
                     About
                   </a>
                 </li>
-                <li class="nav-item active">
-                  <a class="nav-link" href="service.html">
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'service' %}">
                     Services
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="portfolio.html">
+                  <a class="nav-link" href="{% url 'portfolio' %}">
                     Portfolio
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="contact.html">Contact Us</a>
+                  <a class="nav-link" href="{% url 'contact' %}">Contact Us</a>
                 </li>
               </ul>
               <form class="form-inline my-2 my-lg-0 ml-0 ml-lg-4 mb-3 mb-lg-0">
@@ -97,16 +98,16 @@
         <div class="col-lg-6 ">
           <div class="img-container tab-content">
             <div class="img-box tab-pane fade show active" id="img1" role="tabpanel">
-              <img src="images/service-img.jpg" alt="" />
+              <img src="{% static 'images/service-img.jpg' %}" alt="" />
             </div>
             <div class="img-box tab-pane fade  " id="img2" role="tabpanel">
-              <img src="images/service-img.jpg" alt="" />
+              <img src="{% static 'images/service-img.jpg' %}" alt="" />
             </div>
             <div class="img-box tab-pane fade  " id="img3" role="tabpanel">
-              <img src="images/service-img.jpg" alt="" />
+              <img src="{% static 'images/service-img.jpg' %}" alt="" />
             </div>
             <div class="img-box tab-pane fade  " id="img4" role="tabpanel">
-              <img src="images/service-img.jpg" alt="" />
+              <img src="{% static 'images/service-img.jpg' %}" alt="" />
             </div>
           </div>
         </div>
@@ -156,16 +157,16 @@
     <div class="social_container">
       <div class="social_box">
         <a href="">
-          <img src="images/fb.png" alt="">
+          <img src="{% static 'images/fb.png' %}" alt="">
         </a>
         <a href="">
-          <img src="images/twitter.png" alt="">
+          <img src="{% static 'images/twitter.png' %}" alt="">
         </a>
         <a href="">
-          <img src="images/linkedin.png" alt="">
+          <img src="{% static 'images/linkedin.png' %}" alt="">
         </a>
         <a href="">
-          <img src="images/youtube.png" alt="">
+          <img src="{% static 'images/youtube.png' %}" alt="">
         </a>
       </div>
     </div>
@@ -203,15 +204,15 @@
             </h6>
             <div class="info_link-box">
               <a href="">
-                <img src="images/location.png" alt="">
+                <img src="{% static 'images/location.png' %}" alt="">
                 <span> Gb road 123 london Uk </span>
               </a>
               <a href="">
-                <img src="images/call.png" alt="">
+                <img src="{% static 'images/call.png' %}" alt="">
                 <span>+01 12345678901</span>
               </a>
               <a href="">
-                <img src="images/mail.png" alt="">
+                <img src="{% static 'images/mail.png' %}" alt="">
                 <span> demo@gmail.com</span>
               </a>
             </div>
@@ -235,11 +236,11 @@
   <!-- end info section -->
 
 
-  <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
-  <script type="text/javascript" src="js/bootstrap.js"></script>
+  <script type="text/javascript" src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
   </script>
-  <script type="text/javascript" src="js/custom.js"></script>
+  <script type="text/javascript" src="{% static 'js/custom.js' %}"></script>
 </body>
 
 </html>

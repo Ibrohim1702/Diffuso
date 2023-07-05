@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static %}
 <html>
 
 <head>
@@ -23,12 +24,12 @@
   <link href="https://fonts.googleapis.com/css?family=Poppins:400,700|Raleway:400,700&display=swap" rel="stylesheet" />
 
   <!-- bootstrap core css -->
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+  <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}" />
 
   <!-- Custom styles for this template -->
-  <link href="css/style.css" rel="stylesheet" />
+  <link href="{% static 'css/style.css' %}" rel="stylesheet" />
   <!-- responsive style -->
-  <link href="css/responsive.css" rel="stylesheet" />
+  <link href="{% static 'css/responsive.css' %}" rel="stylesheet" />
 </head>
 
 <body class="sub_page">
@@ -38,7 +39,7 @@
       <div class="container-fluid">
         <nav class="navbar navbar-expand-lg custom_nav-container pt-3">
           <a class="navbar-brand" href="index.html">
-            <img src="images/logo.png" alt="" />
+            <img src="{% static 'images/logo.png' %}" alt="" />
           </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -47,26 +48,26 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
               <ul class="navbar-nav  ">
-                <li class="nav-item ">
-                  <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                <li class="nav-item active">
+                  <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="about.html">
+                  <a class="nav-link" href="{% url 'about' %}">
                     About
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="service.html">
+                  <a class="nav-link" href="{% url 'service' %}">
                     Services
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="portfolio.html">
+                  <a class="nav-link" href="{% url 'portfolio' %}">
                     Portfolio
                   </a>
                 </li>
-                <li class="nav-item active">
-                  <a class="nav-link" href="contact.html">Contact Us</a>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'contact' %}">Contact Us</a>
                 </li>
               </ul>
               <form class="form-inline my-2 my-lg-0 ml-0 ml-lg-4 mb-3 mb-lg-0">
@@ -103,18 +104,19 @@
           </div>
         </div>
         <div class="col-md-5 col-lg-4 px-0">
-          <form action="">
+          <form action="" method="post">
+            {% csrf_token %}
             <div>
-              <input type="text" placeholder="Name" />
+              <input type="text" placeholder="Name" name="name" />
             </div>
             <div>
-              <input type="email" placeholder="Email" />
+              <input type="email" placeholder="Email" name="email" />
             </div>
             <div>
-              <input type="text" placeholder="Phone" />
+              <input type="text" placeholder="Phone" name="phone" />
             </div>
             <div>
-              <input type="text" class="message-box" placeholder="Message" />
+              <input type="text" class="message-box" placeholder="Message" name="message" />
             </div>
             <div class="d-flex ">
               <button>
@@ -147,14 +149,14 @@
             </h4>
           </div>
           <div class="img-box">
-            <img src="images/client.jpg" alt="">
+            <img src="{% static 'images/client.jpg' %}" alt="">
           </div>
         </div>
         <div class="detail-box">
           <p>
             It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem
           </p>
-          <img src="images/quote.png" alt="">
+          <img src="{% static 'images/quote.png' %}" alt="">
         </div>
       </div>
     </div>
@@ -169,16 +171,16 @@
     <div class="social_container">
       <div class="social_box">
         <a href="">
-          <img src="images/fb.png" alt="">
+          <img src="{% static 'images/fb.png' %}" alt="">
         </a>
         <a href="">
-          <img src="images/twitter.png" alt="">
+          <img src="{% static 'images/twitter.png' %}" alt="">
         </a>
         <a href="">
-          <img src="images/linkedin.png" alt="">
+          <img src="{% static 'images/linkedin.png' %}" alt="">
         </a>
         <a href="">
-          <img src="images/youtube.png" alt="">
+          <img src="{% static 'images/youtube.png' %}" alt="">
         </a>
       </div>
     </div>
@@ -248,11 +250,11 @@
   <!-- end info section -->
 
 
-  <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
-  <script type="text/javascript" src="js/bootstrap.js"></script>
+  <script type="text/javascript" src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
   </script>
-  <script type="text/javascript" src="js/custom.js"></script>
+  <script type="text/javascript" src="{% static 'js/custom.js' %}"></script>
 </body>
 
 </html>
